@@ -36,7 +36,7 @@
 
 <body>
 
-  <nav class="navbar navbar-expand-lg fixed-top custom_nav_menu sticky">
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top sticky">
     <div class="container">
       <a class="navbar-brand logo" href="index.html">
         <img src="./assets/BASEIT-2.svg" alt="" class="img-fluid logo-light">
@@ -49,14 +49,60 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mx-auto">
+
           <li class="nav-item">
-            <a href="#home" class="nav-link">Home</a>
+            <a href="#home" class="nav-link">Kotisivu</a>
           </li>
-          <li class="nav-item"><a href="#1" class="nav-link">Asiakkaille</a></li>
-          <li class="nav-item"><a href="#2" class="nav-link">Avoimet työpaikat</a></li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Asiakkaille
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <h6 class="dropdown-header">Palvelut yrityksille</h6>
+              <a class="dropdown-item" href="#">Suora rekrytointi</a>
+              <a class="dropdown-item" href="#">Vuokratyövoima</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Ulkoistettu IT palvelu digitoimiston kautta</a>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Avoimet työpaikat
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+              <a class="dropdown-item" href="#">jätä CV</a>
+              <a class="dropdown-item" href="#">Miksi tehdä töitä meidän kanssa</a>
+            </div>
+          </li>
+
           <li class="nav-item"><a href="#3" class="nav-link">Toimeksiannot</a></li>
-          <li class="nav-item"><a href="#4" class="nav-link">Palvelut</a></li>
-          <li class="nav-item active"><a href="#en" class="nav-link">Ru</a></li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Palvelut
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+              <a class="dropdown-item" href="#">IT -hankkeiden toteuttaminen (oma digitoimisto)</a>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              <img src="./assets/flags/fi.svg" alt="" class="border mr-1" height="24" />
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown4">
+              <a class="dropdown-item" href="#"><img src="./assets/flags/gb.svg" alt="" class="pr-1" height="24" />
+                En</a>
+              <a class="dropdown-item" href="#"><img src="./assets/flags/ru.svg" alt="" class="pr-1" height="24" />
+                Ru</a>
+            </div>
+          </li>
         </ul>
         <button class="btn btn-primary text-capitalize mr-3">OMA</button>
       </div>
@@ -312,9 +358,7 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="section_title_all text-center">
-            <div class="section_icons">
-              <i class="mbri-contact-form"></i>
-            </div>
+            <span class="brand-bg-secondary rounded-circle p-3 material-icons md-light md-36">contact_support</span>
             <h3 class="mt-3">Onko sinulla <span class="text_custom"> Kysyttävää </span></h3>
             <p class="section_subtitle mx-auto text-muted">os sinä aiot käyttää kappaletta Lorem Ipsumista, sinun pitää
               tarkistaa, ettei tekstin seassa ole mitään nolostuttavaa.</p>
@@ -325,11 +369,11 @@
         <div class="col-lg-5">
           <div class="contact_info_box mt-3 bg-light p-5">
             <div class="">
-              <h5 class="text_customt">Contact Info </h5>
+              <h5 class="text-dark">Contact Info </h5>
             </div>
             <div class="contact_details_content mt-4">
               <div class="contact_detail">
-                <h6 class="text_custom">Address</h6>
+                <h6 class="">Address</h6>
                 <p class="text-muted mb-0">Ahti Business Park
                   <br>Ahventie 4, 02170 Espoo
                 </p>
@@ -337,7 +381,7 @@
             </div>
             <div class="contact_details_content mt-4">
               <div class="contact_detail">
-                <h6 class="text_custom">Toimitusjohtaja</h6>
+                <h6 class="text-dark">Toimitusjohtaja</h6>
                 <p class="text-muted mb-0">
                   Anastasia Rantala
                 </p>
@@ -346,14 +390,14 @@
 
             <div class="contact_details_content mt-4">
               <div class="contact_detail">
-                <h6 class="text_custom">Mail</h6>
+                <h6 class="text-dark">Mail</h6>
                 <p class="text-muted mb-0"><a href="mailto:anastasia@base.fi">anastasia@base.fi</a></p>
               </div>
             </div>
 
             <div class="contact_details_content mt-4">
               <div class="contact_detail">
-                <h6 class="text_custom">Call</h6>
+                <h6 class="text-dark">Call</h6>
                 <p class="text-muted mb-0">
                   <a href="tel:+358401883988">+358 40 188 3988</a>
                 </p>
@@ -407,7 +451,7 @@
       <div class="row">
         <div class="col-lg-3">
           <div class="business_footer_logo mt-3">
-            <img src="./assets/BASEIT-2.svg" alt="" class="img-fluid mx-auto d-block">
+            <img src="./assets/BASEIT-2.svg" alt="" class="img-fluid mx-auto d-block" />
           </div>
         </div>
 
