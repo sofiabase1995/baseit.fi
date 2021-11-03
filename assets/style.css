@@ -16,6 +16,13 @@
   --secondary-variant: #37bbeb;
 }
 
+.logo-light-rect {
+  fill: var(--primary);
+}
+.logo-dark-rect {
+  fill: var(--primary);
+}
+
 .brand-bg-primary {
   background-color: var(--primary);
 }
@@ -185,9 +192,9 @@ a:hover {
   font-weight: 700;
 }
 
-.text_custom {
-  /* color: var(--secondary); */
-}
+/* .text_custom {
+  color: var(--secondary);
+} */
 
 .bg_custom_gradiant {
   background: #ff4b1f; /* fallback for old browsers */

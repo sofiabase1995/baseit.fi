@@ -24,7 +24,7 @@
   <!-- Icon -->
   <link href="./assets/mobiriseicons.css" rel="stylesheet">
 
-  <link rel="stylesheet" type="text/css" href="./assets/materialdesignicons.min.css">
+  <!-- <link rel="stylesheet" type="text/css" href="./assets/materialdesignicons.min.css"> -->
 
   <!--bootstrap Css-->
   <link rel="stylesheet" type="text/css" href="./assets/bootstrap.min.css">
@@ -38,14 +38,18 @@
 
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top sticky">
     <div class="container">
-      <a class="navbar-brand logo" href="index.html">
-        <img src="./assets/BASEIT-2.svg" alt="" class="img-fluid logo-light">
-        <img src="./assets/BASEIT-dark.svg" alt="" class="img-fluid logo-dark">
+      <a class="navbar-brand logo d-flex" href="index.html">
+        <img id="logo-light" src="./assets/BASEIT.1.light.svg" alt="" class="img-fluid logo-light">
+        <img id="logo-dark" src="./assets/BASEIT.1.dark.svg" alt="" class="img-fluid logo-dark">
+        <!-- <object id="logo-light" class="img-fluid logo-light" style="height: 52px;" type="image/svg+xml"
+          data="./assets/BASEIT.1.light.svg"></object>
+        <object id="logo-dark" class="img-fluid img-fluid logo-dark" style="height: 52px;" type="image/svg+xml"
+          data="./assets/BASEIT.1.dark.svg"></object> -->
       </a>
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
         aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="mdi mdi-menu"></i>
+        <span class="material-icons md-secondary">menu</span>
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mx-auto">
@@ -128,6 +132,20 @@
 
                 <div class="home_btn_manage mt-4 pt-3">
                   <a href="#" class="btn btn-primary btn-rounded mr-3">OTA YHTEYTTÄ</a>
+                  <span class="text-white">Logos</span>
+                  <div class="btn-group mr-2" role="group" aria-label="First group">
+                    <button type="button" class="btn btn-secondary" onclick="javascript:changeLogos(1)">1</button>
+                    <button type="button" class="btn btn-secondary" onclick="javascript:changeLogos(2)">2</button>
+                    <button type="button" class="btn btn-secondary" onclick="javascript:changeLogos(3)">3</button>
+                    <button type="button" class="btn btn-secondary" onclick="javascript:changeLogos(4)">4</button>
+                  </div>
+                  <span class="text-white">Colors</span>
+                  <div class="btn-group mr-2" role="group" aria-label="First group">
+                    <button type="button" class="btn btn-secondary" onclick="javascript:changeColors(0)">1</button>
+                    <button type="button" class="btn btn-secondary" onclick="javascript:changeColors(1)">2</button>
+                    <button type="button" class="btn btn-secondary" onclick="javascript:changeColors(2)">3</button>
+                    <button type="button" class="btn btn-secondary" onclick="javascript:changeColors(3)">4</button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -451,7 +469,7 @@
       <div class="row">
         <div class="col-lg-3">
           <div class="business_footer_logo mt-3">
-            <img src="./assets/BASEIT-2.svg" alt="" class="img-fluid mx-auto d-block" />
+            <img src="./assets/BASEIT.1.light.svg" alt="" class="img-fluid mx-auto d-block" />
           </div>
         </div>
 
@@ -515,6 +533,43 @@
   <script src="./assets/scrollspy.min.js"></script>
   <script src="./assets/jquery.easing.min.js"></script>
   <script src="./assets/custom.js"></script>
+  <script>
+    function changeLogos(index = 0) {
+      var logoLight = document.getElementById('logo-light')
+      var logoDark = document.getElementById('logo-dark')
+      logoLight.src = `./assets/BASEIT.${index}.light.svg`
+      logoDark.src = `./assets/BASEIT.${index}.dark.svg`
+      // logoLight.data = `./assets/BASEIT.${index}.light.svg`
+      // logoDark.data = `./assets/BASEIT.${index}.dark.svg`
+    }
+    var colors = [
+      {
+        primary: '#01b0f0',
+        primaryVariant: '#37bbeb',
+        secondary: '#01b0f0',
+        secondaryVariant: '#37bbeb'
+      },
+      {
+        primary: '#004dc0',
+        primaryVariant: '#004dc0',
+        secondary: '#f52a50',
+        secondaryVariant: '#ff5c79'
+      },
+      {
+        primary: '#219653',
+        primaryVariant: '#41b673',
+        secondary: '#41b673',
+        secondaryVariant: '#31a663'
+      },
+    ]
+    function changeColors(index = 0) {
+      document.documentElement.style.setProperty('--primary', colors[index].primary);
+      document.documentElement.style.setProperty('--primary-variant', colors[index].primaryVariant);
+      document.documentElement.style.setProperty('--secondary', colors[index].secondary);
+      document.documentElement.style.setProperty('--secondary-variant', colors[index].secondaryVariant);
+    }
+
+  </script>
 </body>
 
 </html>
