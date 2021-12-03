@@ -1,0 +1,11 @@
+{
+  "tags": "en-GB",
+  "meta": {
+    "title": "About us"
+  },
+  "layout": "base",
+  "eleventyNavigation": {
+    "key": "About us",
+    "order": 3
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "tags": "fi-FI",
+  "meta": {
+    "title": "Asiakkaille"
+  },
+  "layout": "base",
+  "eleventyNavigation": {
+    "key": "Asiakkaille",
+    "order": 1
+  }
+}

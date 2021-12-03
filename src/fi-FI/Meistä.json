@@ -1,0 +1,11 @@
+{
+  "tags": "fi-FI",
+  "meta": {
+    "title": "Meistä"
+  },
+  "layout": "base",
+  "eleventyNavigation": {
+    "key": "Meistä",
+    "order": 3
+  }
+}

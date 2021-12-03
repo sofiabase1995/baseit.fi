@@ -1,0 +1,11 @@
+{
+  "tags": "fi-FI",
+  "meta": {
+    "title": "Hakijoille"
+  },
+  "layout": "base",
+  "eleventyNavigation": {
+    "key": "Hakijoille",
+    "order": 2
+  }
+}

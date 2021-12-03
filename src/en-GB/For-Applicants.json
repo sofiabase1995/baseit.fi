@@ -1,0 +1,11 @@
+{
+  "tags": "en-GB",
+  "meta": {
+    "title": "For Applicants"
+  },
+  "layout": "base",
+  "eleventyNavigation": {
+    "key": "For Applicants",
+    "order": 2
+  }
+}

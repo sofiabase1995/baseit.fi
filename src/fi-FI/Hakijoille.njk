@@ -1,0 +1,61 @@
+<section class="min-vh-65 bg-with-cover cover-join d-flex align-items-end">
+  <div class="container py-5">
+    <div class="row">
+      <div class="col-md-8">
+        <h1 class="display-2 text-white text-capitalize">{{ meta.title }}</h1>
+        <p class="py-2 text-white fs-5">
+          BASE IT Oy on 2021 vuonna perustettu kansainvälinen yhtiö, joka tarjoaa henkilöstöratkaisuja sekä
+          konsultointia. Meillä on jatkuvasti uusia kotimaisia sekä kansainvälisiä työpaikkoja ja toimeksiantoja,
+          joihin haemme senior ja mid - level asiantuntijoita.
+        </p>
+        <p class="py-2 text-white fs-5">
+          Liity nyt meidän Talent Community jäseneksi, ja tee askel kohti uusia haasteita ja mahdollisuuksia.
+        </p>
+        <p class='pt-2'>
+          <a class="btn btn-primary btn-lg rounded-pill me-4" target="_blank"
+            href="https://ats.talentadore.com/talent-community/base-it-oy/join/nyp/en/g/ebGn">Avoin hakemus</a>
+          <a class="btn btn-primary btn-lg rounded-pill mt-4 mt-sm-0" target="_blank"
+            href="https://ats.talentadore.com/talent-community/base-it-oy/join/nyp/en/g/y5pA">Liity kumppaniksi</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section_all bg-light" id="about">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-10">
+        <div class="container">
+          <div class='row justify-content-center'>
+            <div class="col-12">
+              <h1 class="mb-5">Täällä näet meidän kaikki avoimet työpaikat ja toimeksiannot</h1>
+            </div>
+            <div class="col-md-8 btn-group mb-5" role="group" aria-label="Type">
+              <input type="radio" class="btn-check" name="btnradio" value="assignment" id="btnradio0" autocomplete="off"
+                checked>
+              <label class="btn btn-outline-primary" for="btnradio0">{{ 'Assignments' | i18n }}</label>
+              <input type="radio" class="btn-check" name="btnradio" value="open+position" id="btnradio1"
+                autocomplete="off">
+              <label class="btn btn-outline-primary" for="btnradio1">{{ 'Open positions' | i18n }}</label>
+              <input type="radio" class="btn-check" name="btnradio" value="direct+recruiting" id="btnradio2"
+                autocomplete="off">
+              <label class="btn btn-outline-primary" for="btnradio2">{{ 'Direct recruiting' | i18n }}</label>
+            </div>
+            <div class="col-md-8 mb-5" aria-label="Country" id="talentadore-filters"></div>
+          </div>
+          <div class="row justify-content-center" id="talentadore"></div>
+
+          <div class="row justify-content-center collapse" id="talentadore-message">
+            <div class="col-md-10">
+              <div class="card h-100 text-dark bg-warning">
+                <div class="card-body job-card">
+                  <div class="card-text">{{ 'No offers at now' | i18n }}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

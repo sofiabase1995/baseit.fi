@@ -1,0 +1,15 @@
+<nav class="navbar navbar-expand-lg navbar-dark shadow-sm fixed-top sticky">
+  <div class="container">
+    <a class="navbar-brand py-0 logo d-flex" href="{{ '/' + locale + '/' | url }}">
+      <img id="logo-light" src="/assets/svgs/logo.light.svg" alt="" class="img-fluid logo-light">
+      <img id="logo-dark" src="/assets/svgs/logo.dark.svg" alt="" class="img-fluid logo-dark">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+      aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="material-icons-round md-secondary md-32">menu</span>
+    </button>
+    <div class="collapse navbar-collapse py-3" id="navbarCollapse">
+      {% include "navigation.njk" %}
+    </div>
+  </div>
+</nav>

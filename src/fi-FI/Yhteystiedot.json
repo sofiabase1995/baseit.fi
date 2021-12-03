@@ -1,0 +1,12 @@
+{
+  "tags": "fi-FI",
+  "meta": {
+    "title": "Yhteystiedot"
+  },
+  "layout": "base",
+  "eleventyNavigation": {
+    "url": "/fi-FI/#yhteystiedot",
+    "key": "Yhteystiedot",
+    "order": 4
+  }
+}

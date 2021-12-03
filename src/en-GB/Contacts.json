@@ -1,0 +1,12 @@
+{
+  "tags": "en-GB",
+  "meta": {
+    "title": "Contacts"
+  },
+  "layout": "base",
+  "eleventyNavigation": {
+    "url": "/en-GB/#Contacts",
+    "key": "Contacts",
+    "order": 4
+  }
+}
