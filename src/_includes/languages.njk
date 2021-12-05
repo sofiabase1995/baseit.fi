@@ -11,7 +11,7 @@
   </a>
   <div class="dropdown-menu" aria-labelledby="languageSelectorDropdown">
     {% for entry in locales -%}
-    <a href="/{{ entry.code }}/{{ pageUrl }}" class="dropdown-item {{ 'disabled' if locale === entry.code else '' }}"
+    <a href="/{{ entry.code }}/{#{ pageUrl }#}" class="dropdown-item {{ 'disabled' if locale === entry.code else '' }}"
       rel="alternate" hreflang="{{ entry.code }}"><img src="/assets/images/flags/{{ entry.code }}.svg"
         alt="{{ entry.label }}" class="pe-2" height="24" />{{ entry.label }}</a>
     {% endfor -%}
