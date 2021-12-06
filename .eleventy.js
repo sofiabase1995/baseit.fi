@@ -66,6 +66,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets/styles/bootstrap-examples");
   eleventyConfig.addPassthroughCopy("src/assets/scripts/");
   eleventyConfig.addPassthroughCopy("src/assets/svgs");
+  eleventyConfig.addPassthroughCopy("src/assets/docs");
 
   // Watch target for local dev
   eleventyConfig.addWatchTarget("./src/assets");
