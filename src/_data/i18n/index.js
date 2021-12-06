@@ -1,4 +1,9 @@
 module.exports = {
+  "BASEiT": {
+    "fi-FI": "BASEiT",
+    "sv-SE": "BASEiT",
+    "ru-RU": "BASEiT",
+  },
   "Your name": {
     "fi-FI": "Sinun nimesi",
   },
