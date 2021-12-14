@@ -7,8 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BASEiT Henkilöstöpalvelut - Laadukkaita palveluita tekijöille - Laadukkaita palveluita tekijöille</title>
 
-  <link rel="shortcut icon" href="/assets/favicons/favicon.png?v1.0.8">
-  <link rel="stylesheet" href="/assets/styles/main.css?v1.0.8">
+  <link rel="shortcut icon" href="/assets/favicons/favicon.png?v1.0.9">
+  <link rel="stylesheet" href="/assets/styles/main.css?v1.0.9">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/css/intlTelInput.css"
     integrity="sha512-gxWow8Mo6q6pLa1XH/CcH8JyiSDEtiwJV78E+D+QP0EVasFs8wKXq16G8CLD4CJ2SnonHr4Lm/yY2fSI2+cbmw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -154,7 +154,7 @@
 
     <div class="row">
       <div class="col-md-6">
-        <div class="d-flex align-items-center my-3 p-3 rounded bg-white shadow-sm" style="min-height:12rem">
+        <div class="d-flex align-items-center my-3 p-3 rounded bg-white shadow-sm mh-services">
           <div class="px-4 material-icons-round md-36 text-primary ms-n2">location_searching</div>
           <div class="d-flex flex-column justify-content-around">
             <h4 class="">
@@ -169,7 +169,7 @@
       </div>
 
       <div class="col-md-6">
-        <div class="d-flex align-items-center my-3 p-3 rounded bg-white shadow-sm" style="min-height:12rem">
+        <div class="d-flex align-items-center my-3 p-3 rounded bg-white shadow-sm mh-services">
           <div class="px-4 material-icons-round md-36 text-primary ms-n2">schedule</div>
           <div class="d-flex flex-column justify-content-around">
             <h4 class="">
@@ -185,7 +185,7 @@
       </div>
 
       <div class="col-md-6">
-        <div class="d-flex align-items-center my-3 p-3 rounded bg-white shadow-sm" style="min-height:12rem">
+        <div class="d-flex align-items-center my-3 p-3 rounded bg-white shadow-sm mh-services">
           <div class="px-4 material-icons-round md-36 text-primary ms-n2">code</div>
           <div class="d-flex flex-column justify-content-around">
             <h4 class="">
@@ -201,7 +201,7 @@
       </div>
 
       <div class="col-md-6">
-        <div class="d-flex align-items-center my-3 p-3 rounded bg-white shadow-sm" style="min-height:12rem">
+        <div class="d-flex align-items-center my-3 p-3 rounded bg-white shadow-sm mh-services">
           <div class="px-4 material-icons-round md-36 text-primary ms-n2">school</div>
           <div class="d-flex flex-column justify-content-around">
             <h4 class="">
@@ -305,44 +305,121 @@
           </div>
         </div>
       </div>
-
       <div class="col-lg-7">
-        <div class="business_form_custom mt-3">
-          <form>
-            <div class="row">
-              <div class="col-lg-12">
-                <div class="form-group mt-3">
-                  <input name="name" id="name" type="text" class="form-control"
-                    placeholder="Your name..." required="">
-                </div>
-              </div>
-              <div class="col-lg-12">
-                <div class="form-group mt-3">
-                  <input name="email" id="email" type="email" class="form-control"
-                    placeholder="Your email..." required="">
-                </div>
-              </div>
-              <div class="col-lg-12">
-                <div class="form-group mt-3">
-                  <input type="text" class="form-control" id="subject" placeholder="Subject..."
-                    required="">
-                </div>
-              </div>
-              <div class="col-lg-12">
-                <div class="form-group mt-3">
-                  <textarea name="comments" id="comments" rows="4" class="form-control"
-                    placeholder="Message..." required=""></textarea>
-                </div>
-              </div>
-            </div>
-            <div class="row my-3">
-              <div class="col-lg-12">
-                <input type="submit" class="btn btn-primary rounded-pill" value="Send">
-              </div>
-            </div>
-          </form>
+  <div class="business_form_custom mt-3">
+    <form>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="form-group mt-3">
+            <input name="name" id="name" type="text" class="form-control" placeholder="Your name..."
+              required="">
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="form-group mt-3">
+            <input name="email" id="email" type="email" class="form-control" placeholder="Your email..."
+              required="">
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="form-group mt-3">
+            <input name="phone" type="phone" id="fc-phone" class="form-control" id="fc-phone"
+              placeholder="Telephone number..." />
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="form-group mt-3">
+            <input type="text" class="form-control" id="subject" placeholder="Subject..." required="">
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="form-group mt-3">
+            <textarea name="comments" id="comments" rows="4" class="form-control"
+              placeholder="Message..." required=""></textarea>
+          </div>
         </div>
       </div>
+      <div class="row my-3">
+        <div class="col-lg-12">
+          <input type="submit" class="btn btn-primary rounded-pill" value="Send">
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+<div class="modal fade" id="formCustomer" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="float-end btn-close" data-bs-dismiss="modal"
+          aria-label="Close"></button>
+        <div class="">
+          <h5 class="" id="exampleModalLabel">Let&#39;s get started!!</h5>
+          <p>Give us a chance to supply you with the best in the market.
+            <br />Please tell us a little about your needs and situation.
+          </p>
+        </div>
+        <form>
+          <div class="mb-3">
+            <label for="fc-name" class="form-label">First name</label>
+            <input type="text" placeholder="John" class="form-control" id="fc-name" />
+          </div>
+          <div class="mb-3">
+            <label for="fc-last" class="form-label">Last name</label>
+            <input type="text" placeholder="Doe" class="form-control" id="fc-last" />
+          </div>
+          <div class="mb-3">
+            <label for="fc-email" class="form-label">Email address</label>
+            <input type="email" placeholder="myemail@domain.name" class="form-control" id="fc-email"
+              aria-describedby="emailHelp" />
+            <div id="emailHelp" class="form-text">We&#39;ll never share your email with anyone else.</div>
+          </div>
+          <div class="mb-3">
+            <label for="fc-phone" class="form-label">Telephone number</label>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" id="fc-phone" />
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="fc-company" class="form-label">Company name</label>
+            <input type="text" placeholder="John Doe Corp" class="form-control" id="fc-company" />
+          </div>
+          <div class="mb-3">
+            <label for="fc-business" class="form-label">Business ID</label>
+            <input type="text" placeholder="XXXXXXX-X" class="form-control" id="fc-business" />
+          </div>
+          <div class="mb-3">
+            <label for="fc-case" class="form-label">Case Description</label>
+            <textarea class="form-control" placeholder="Goals, responsibilities, technologies..." rows="3"
+              id="fc-case"></textarea>
+
+          </div>
+          <div class="mb-3">
+            <label for="fc-schedule" class="form-label">Your Schedule</label>
+            <input type="text" placeholder="Immediately, in two weeks..." class="form-control"
+              id="fc-schedule" />
+          </div>
+          <div class="mb-3">
+            <label for="fc-long" class="form-label">How Long Do You Need The Talent</label>
+            <input type="text" placeholder="I need an author for three months..." class="form-control" id="fc-long" />
+          </div>
+          <div class="mb-3">
+            <label for="fc-other" class="form-label">Other Requirements</label>
+            <input type="text" placeholder="Eg. on-site requirements, language..." class="form-control"
+              id="fc-other" />
+          </div>
+
+        </form>
+      </div>
+      <div class="border-top p-3 d-flex justify-content-between">
+        <button type="button" class="btn btn-primary">Send</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
     </div>
   </div>
 </section>
@@ -462,8 +539,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/intlTelInput.min.js"
   integrity="sha512-QMUqEPmhXq1f3DnAVdXvu40C8nbTgxvBGvNruP6RFacy3zWKbNTmx7rdQVVM2gkd2auCWhlPYtcW2tHwzso4SA=="
   crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script type="text/javascript" src="/assets/scripts/talentadore.js?v1.0.8"></script>
-<script type="text/javascript" src="/assets/scripts/custom.js?v1.0.8"></script>
+<script type="text/javascript" src="/assets/scripts/talentadore.js?v1.0.9"></script>
+<script type="text/javascript" src="/assets/scripts/custom.js?v1.0.9"></script>
 </body>
 
 </html>
