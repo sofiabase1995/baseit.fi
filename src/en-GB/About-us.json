@@ -6,6 +6,6 @@
   "layout": "base",
   "eleventyNavigation": {
     "key": "About us",
-    "order": 3
+    "order": 10
   }
 }

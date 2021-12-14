@@ -1,11 +1,11 @@
 {
   "tags": "fi-FI",
   "meta": {
-    "title": "Meistä"
+    "title": "Miksi BaseiT Oy?"
   },
   "layout": "base",
   "eleventyNavigation": {
     "key": "Meistä",
-    "order": 3
+    "order": 10
   }
 }

@@ -6,6 +6,6 @@
   "layout": "base",
   "eleventyNavigation": {
     "key": "Asiakkaille",
-    "order": 1
+    "order": 20
   }
 }

@@ -30,6 +30,15 @@ module.exports = {
     "sv-SE": "Öppna ansökan",
     "ru-RU": "Открытые вакансии",
   },
+  "Let's get started!": {
+    "fi-FI": "Aloitetaanpa!",
+  },
+  "Give us a chance to supply you with the best in the market.": {
+    "fi-FI": "Anna meille mahdollisuus toimittaa sinulle markkinoiden paras.",
+  },
+  "Please tell us a little about your needs and situation.": {
+    "fi-FI": "Kerrothan vähän tarpeestasi ja tilanteestasi.",
+  },
   "First name": {
     "fi-FI": "Etunimi",
   },
@@ -61,34 +70,34 @@ module.exports = {
     "fi-FI": "Kuvaus tarpeestasi",
   },
   "placeholder Case Description": {
-    "en-GB": "Goals, responsibilities, technologies, ...",
-    "fi-FI": "Tavoitteet, vastuut, teknologiat, ...",
+    "en-GB": "Goals, responsibilities, technologies...",
+    "fi-FI": "Tavoitteet, vastuut, teknologiat...",
   },
   "Your Schedule": {
     "fi-FI": "Aikataulusi",
   },
   "placeholder Your Schedule": {
-    "en-GB": "Immediately, in two weeks, ...",
-    "fi-FI": "Heti, parin viikon päästä, ...",
+    "en-GB": "Immediately, in two weeks...",
+    "fi-FI": "Heti, parin viikon päästä...",
   },
   "How Long Do You Need The Talent": {
     "fi-FI": "Tarpeen kesto",
   },
   "placeholder How Long": {
-    "en-GB": "I need an author for three months ...",
-    "fi-FI": "Tarvitsen tekijää kolmeksi kuukaudeksi ...",
+    "en-GB": "I need an author for three months...",
+    "fi-FI": "Tarvitsen tekijää kolmeksi kuukaudeksi...",
   },
   "Other Requirements": {
     "fi-FI": "Muut vaatimukset",
   },
   "placeholder Other Requirements": {
-    "en-GB": "Eg. on-site requirements, language, ...",
-    "fi-FI": "On-site, kielivaatimukset, ...",
+    "en-GB": "Eg. on-site requirements, language...",
+    "fi-FI": "On-site, kielivaatimukset...",
   },
 
   "never share your email": {
     "en-GB": "We'll never share your email with anyone else.",
-    "fi-FI": "Emme koskaan jaa sähköpostiosoitettasi kenenkään muun kanssa.",
+    "fi-FI": "Emme koskaan jaa sähköpostiosoitettasi kolmannen osapuolen kanssa.",
   },
   Close: {
     "fi-FI": "Sulje",
@@ -130,7 +139,7 @@ module.exports = {
   Assignments: {
     "fi-FI": "Toimeksiannot",
   },
-  "No offers at now": {
+  "No offers at the moment": {
     "fi-FI": "Ei tarjouksia tällä hetkellä",
   },
   "Direct recruiting": {
