@@ -1,0 +1,115 @@
+<div class="col-lg-7">
+  <div class="business_form_custom mt-3">
+    <form>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="form-group mt-3">
+            <input name="name" id="name" type="text" class="form-control" placeholder="{{ 'Your name' | i18n }}..."
+              required="">
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="form-group mt-3">
+            <input name="email" id="email" type="email" class="form-control" placeholder="{{ 'Your email' | i18n }}..."
+              required="">
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="form-group mt-3">
+            <input name="phone" type="phone" id="fc-phone" class="form-control" id="fc-phone"
+              placeholder="{{ 'Telephone number' | i18n }}..." />
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="form-group mt-3">
+            <input type="text" class="form-control" id="subject" placeholder="{{ 'Subject' | i18n }}..." required="">
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="form-group mt-3">
+            <textarea name="comments" id="comments" rows="4" class="form-control"
+              placeholder="{{ 'Message' | i18n }}..." required=""></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="row my-3">
+        <div class="col-lg-12">
+          <input type="submit" class="btn btn-primary rounded-pill" value="{{ 'Send' | i18n }}">
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+<div class="modal fade" id="formCustomer" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="float-end btn-close" data-bs-dismiss="modal"
+          aria-label="{{ 'Close' | i18n }}"></button>
+        <div class="">
+          <h5 class="" id="exampleModalLabel">{{ 'Let\'s get started!' | i18n }}!</h5>
+          <p>{{ 'Give us a chance to supply you with the best in the market.' | i18n }}
+            <br />{{ 'Please tell us a little about your needs and situation.' | i18n }}
+          </p>
+        </div>
+        <form>
+          <div class="mb-3">
+            <label for="fc-name" class="form-label">{{ 'First name' | i18n }}</label>
+            <input type="text" placeholder="{{ 'placeholder First name' | i18n }}" class="form-control" id="fc-name" />
+          </div>
+          <div class="mb-3">
+            <label for="fc-last" class="form-label">{{ 'Last name' | i18n }}</label>
+            <input type="text" placeholder="{{ 'placeholder Last name' | i18n }}" class="form-control" id="fc-last" />
+          </div>
+          <div class="mb-3">
+            <label for="fc-email" class="form-label">{{ 'Email address' | i18n }}</label>
+            <input type="email" placeholder="{{ 'placeholder Email' | i18n }}" class="form-control" id="fc-email"
+              aria-describedby="emailHelp" />
+            <div id="emailHelp" class="form-text">{{ 'never share your email' | i18n }}</div>
+          </div>
+          <div class="mb-3">
+            <label for="fc-phone" class="form-label">{{ 'Telephone number' | i18n }}</label>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" id="fc-phone" />
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="fc-company" class="form-label">{{ 'Company name' | i18n }}</label>
+            <input type="text" placeholder="{{ 'John Doe Corp' | i18n }}" class="form-control" id="fc-company" />
+          </div>
+          <div class="mb-3">
+            <label for="fc-business" class="form-label">{{ 'Business ID' | i18n }}</label>
+            <input type="text" placeholder="{{ 'XXXXXXX-X' | i18n }}" class="form-control" id="fc-business" />
+          </div>
+          <div class="mb-3">
+            <label for="fc-case" class="form-label">{{ 'Case Description' | i18n }}</label>
+            <textarea class="form-control" placeholder="{{ 'placeholder Case Description' | i18n }}" rows="3"
+              id="fc-case"></textarea>
+
+          </div>
+          <div class="mb-3">
+            <label for="fc-schedule" class="form-label">{{ 'Your Schedule' | i18n }}</label>
+            <input type="text" placeholder="{{ 'placeholder Your Schedule' | i18n }}" class="form-control"
+              id="fc-schedule" />
+          </div>
+          <div class="mb-3">
+            <label for="fc-long" class="form-label">{{ 'How Long Do You Need The Talent' | i18n }}</label>
+            <input type="text" placeholder="{{ 'placeholder How Long' | i18n }}" class="form-control" id="fc-long" />
+          </div>
+          <div class="mb-3">
+            <label for="fc-other" class="form-label">{{ 'Other Requirements' | i18n }}</label>
+            <input type="text" placeholder="{{ 'placeholder Other Requirements' | i18n }}" class="form-control"
+              id="fc-other" />
+          </div>
+
+        </form>
+      </div>
+      <div class="border-top p-3 d-flex justify-content-between">
+        <button type="button" class="btn btn-primary">{{ 'Send' | i18n }}</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{ 'Close' | i18n }}</button>
+      </div>
+    </div>
+  </div>
+</div>
