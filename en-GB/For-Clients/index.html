@@ -152,65 +152,92 @@
             <br />Please tell us a little about your needs and situation.
           </p>
         </div>
-        <form>
+        <form id="form.customer" onsubmit="return onSubmit();">
           <div class="mb-3">
             <label for="fc-name" class="form-label">First name</label>
-            <input type="text" placeholder="John" class="form-control" id="fc-name" />
+            <input id="entry.510370" name="entry.510370" type="text" placeholder="John"
+              class="form-control" id="fc-name" />
           </div>
           <div class="mb-3">
             <label for="fc-last" class="form-label">Last name</label>
-            <input type="text" placeholder="Doe" class="form-control" id="fc-last" />
+            <input id="entry.529659111" name="entry.529659111" type="text"
+              placeholder="Doe" class="form-control" id="fc-last" />
           </div>
           <div class="mb-3">
             <label for="fc-email" class="form-label">Email address</label>
-            <input type="email" placeholder="myemail@domain.name" class="form-control" id="fc-email"
+            <input id="entry.1335138370" name="entry.1335138370" type="email"
+              placeholder="myemail@domain.name" class="form-control" id="fc-email"
               aria-describedby="emailHelp" />
             <div id="emailHelp" class="form-text">We&#39;ll never share your email with anyone else.</div>
           </div>
           <div class="mb-3">
             <label for="fc-phone" class="form-label">Telephone number</label>
             <div class="input-group mb-3">
-              <input type="text" class="form-control" id="fc-phone" />
+              <input id="entry.1325652914" name="entry.1325652914" type="text" class="form-control" id="fc-phone" />
             </div>
           </div>
           <div class="mb-3">
             <label for="fc-company" class="form-label">Company name</label>
-            <input type="text" placeholder="John Doe Corp" class="form-control" id="fc-company" />
+            <input id="entry.1900898239" name="entry.1900898239" type="text" placeholder="John Doe Corp"
+              class="form-control" id="fc-company" />
           </div>
           <div class="mb-3">
             <label for="fc-business" class="form-label">Business ID</label>
-            <input type="text" placeholder="XXXXXXX-X" class="form-control" id="fc-business" />
+            <input id="entry.1112552584" name="entry.1112552584" type="text" placeholder="XXXXXXX-X"
+              class="form-control" id="fc-business" />
           </div>
           <div class="mb-3">
             <label for="fc-case" class="form-label">Case Description</label>
-            <textarea class="form-control" placeholder="Goals, responsibilities, technologies..." rows="3"
-              id="fc-case"></textarea>
-
+            <textarea id="entry.1457350359" name="entry.1457350359" class="form-control"
+              placeholder="Goals, responsibilities, technologies..." rows="3" id="fc-case"></textarea>
           </div>
           <div class="mb-3">
             <label for="fc-schedule" class="form-label">Your Schedule</label>
-            <input type="text" placeholder="Immediately, in two weeks..." class="form-control"
-              id="fc-schedule" />
+            <input id="entry.282991526" name="entry.282991526" type="text"
+              placeholder="Immediately, in two weeks..." class="form-control" id="fc-schedule" />
           </div>
           <div class="mb-3">
             <label for="fc-long" class="form-label">How Long Do You Need The Talent</label>
-            <input type="text" placeholder="I need an author for three months..." class="form-control" id="fc-long" />
+            <input id="entry.1718516198" name="entry.1718516198" type="text"
+              placeholder="I need an author for three months..." class="form-control" id="fc-long" />
           </div>
           <div class="mb-3">
             <label for="fc-other" class="form-label">Other Requirements</label>
-            <input type="text" placeholder="Eg. on-site requirements, language..." class="form-control"
-              id="fc-other" />
+            <input id="entry.552707613" name="entry.552707613" type="text"
+              placeholder="Eg. on-site requirements, language..." class="form-control" id="fc-other" />
           </div>
 
         </form>
       </div>
       <div class="border-top p-3 d-flex justify-content-between">
-        <button type="button" class="btn btn-primary">Send</button>
+        <button type="submit" form="form.customer" class="btn btn-primary">Send</button>
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
 </div>
+<script>
+  function onSubmit() {
+    $.ajax({
+      url: "https://docs.google.com/forms/u/0/d/e/1FAIpQLSeN7N-Z75bi-5LNxHAG1lgB_ncWgFoQXX4M_yv6NHsGoGNUEw/formResponse?embedded=true",
+
+      data: [510370, 529659111, 1335138370, 1325652914, 1900898239, 1112552584, 1457350359, 282991526, 1718516198, 552707613].reduce((acc, f) => {
+        const entry = 'entry.' + f
+        acc[entry] = $('#' + entry).val()
+        return acc
+      }, {}),
+      type: "POST",
+      dataType: "xml",
+      success: function (d) {
+        $('#contact').trigger('reset');
+      },
+      error: function (x, y, z) {
+        $('#contact').trigger('reset');
+      }
+    });
+    return false;
+  }
+</script>
   <section class="section_all bg_footer">
   <div class="container">
     <div class="row">
