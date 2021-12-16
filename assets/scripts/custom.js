@@ -31,19 +31,23 @@
   // $("input#fc-phone").intlTelInput({
   //   utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/8.4.6/js/utils.js"
   // });
-  const phoneInput = document.querySelector("#fc-phone");
-  if (phoneInput) {
+  const phoneInputs = document.querySelectorAll("#entry\\.1325652914, #entry\\.1653417635");
+  if (phoneInputs.length > 0) {
     window.intlTelInputGlobals.loadUtils("https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/utils.min.js");
-    window.intlTelInput(phoneInput, {
-      initialCountry: "auto",
-      geoIpLookup: function (success, failure) {
-        $.get("https://ipinfo.io", function () { }, "jsonp").always(function (resp) {
-          var countryCode = (resp && resp.country) ? resp.country : "fi";
-          success(countryCode);
+    Array.prototype.forEach.call(
+      phoneInputs, (phoneInput) => {
+        window.intlTelInput(phoneInput, {
+          initialCountry: "auto",
+          geoIpLookup: function (success, failure) {
+            $.get("https://ipinfo.io", function () { }, "jsonp").always(function (resp) {
+              var countryCode = (resp && resp.country) ? resp.country : "fi";
+              success(countryCode);
+            });
+            // NOTE: https://imask.js.org/
+            // NOTE: https://github.com/jackocnr/intl-tel-input
+          },
         });
-        // NOTE: https://imask.js.org/
-        // NOTE: https://github.com/jackocnr/intl-tel-input
-      },
-    });
+      }
+    );
   }
 })();
