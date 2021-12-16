@@ -1,41 +1,40 @@
 <div class="col-lg-7">
   <div class="business_form_custom mt-3">
-    <form id="form.questions">
+    <form id="form-questions" name="form-questions">
       <fieldset>
+        <input name="sheet" type="hidden" value="Questions" />
         <div class="row">
           <div class="col-lg-12">
             <div class="form-group mt-3">
-              <input id="entry.1553072612" name="entry.1553072612" type="text" class="form-control"
-                placeholder="{{ 'Your name' | i18n }}..." required="">
+              <input name="Your name" type="text" class="form-control" placeholder="{{ 'Your name' | i18n }}..."
+                required="">
             </div>
           </div>
           <div class="col-lg-12">
             <div class="form-group mt-3">
-              <input id="entry.11430127" name="entry.11430127" type="email" class="form-control"
-                placeholder="{{ 'Your email' | i18n }}..." required="">
+              <input name="Your email" type="email" class="form-control" placeholder="{{ 'Your email' | i18n }}...">
             </div>
           </div>
           <div class="col-lg-12">
             <div class="form-group mt-3">
-              <input id="entry.1653417635" name="entry.1653417635" type="phone" class="form-control" id="fc-phone" />
+              <input name="Telephone number" type="phone" class="form-control" id="fc-phone" />
             </div>
           </div>
           <div class="col-lg-12">
             <div class="form-group mt-3">
-              <input id="entry.1959457499" name="entry.1959457499" class="form-control"
-                placeholder="{{ 'Subject' | i18n }}..." required="">
+              <input name="Subject" class="form-control" placeholder="{{ 'Subject' | i18n }}...">
             </div>
           </div>
           <div class="col-lg-12">
             <div class="form-group mt-3">
-              <textarea id="entry.1445362389" name="entry.1445362389" rows="4" class="form-control"
-                placeholder="{{ 'Message' | i18n }}..." required=""></textarea>
+              <textarea name="Message" rows="4" class="form-control" placeholder="{{ 'Message' | i18n }}..."
+                required=""></textarea>
             </div>
           </div>
         </div>
         <div class="row my-3">
           <div class="col-lg-12">
-            <input id="form-submit" type="button" onclick="return onSubmit();" class="btn btn-primary rounded-pill"
+            <input id="form-questions-submit" type="submit" class="btn btn-primary rounded-pill"
               value="{{ 'Send' | i18n }}">
           </div>
         </div>
@@ -43,48 +42,3 @@
     </form>
   </div>
 </div>
-<script>
-  function disableButton(toggle = true, success) {
-    const btn = document.querySelector('#form-submit');
-    btn.disabled = toggle;
-    let className = 'btn btn-secondary';
-    switch (typeof success) {
-      case 'boolean':
-        className = success ? 'btn btn-success' : 'btn btn-danger'
-        break;
-
-      default:
-        break;
-    }
-    className += ' rounded-pill';
-    btn.className = className;
-  }
-  function disableForm(disable = true, reset) {
-    if (reset) {
-      $('#form\\.questions').trigger('reset');
-    }
-    disableButton(disable, reset);
-    document.querySelector('#form\\.questions fieldset').disabled = disable;
-  }
-  function onSubmit() {
-    disableForm(true);
-    $.ajax({
-      url: "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfHA-9V6Ka0lq8j8gBrAOktIYL_62Z_4VZJ3PEjMo9MR7uJEQ/formResponse?embedded=true",
-
-      data: [1553072612, 11430127, 1653417635, 1959457499, 1445362389].reduce((acc, f) => {
-        acc['entry.' + f] = $('#entry\\.' + f).val()
-        return acc
-      }, {}),
-      type: "POST",
-      dataType: "xml",
-      success: function (d) {
-        disableForm(false, true);
-      },
-      error: function (jqXHR, textStatus, errorThrown) {
-        console.log({ textStatus, errorThrown });
-        disableForm(false, false);
-      }
-    });
-    return false;
-  }
-</script>

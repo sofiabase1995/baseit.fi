@@ -10,111 +10,69 @@
             <br />{{ 'Please tell us a little about your needs and situation.' | i18n }}
           </p>
         </div>
-        <form id="form.customer" onsubmit="return onSubmit();">
+        <form id="form-customer" name="form-customer">
           <fieldset>
+            <input name="sheet" type="hidden" value="Clients" />
             <div class="mb-3">
               <label for="entry.510370" class="form-label">{{ 'First name' | i18n }}</label>
-              <input id="entry.510370" name="entry.510370" type="text"
-                placeholder="{{ 'placeholder First name' | i18n }}" class="form-control" />
+              <input id="entry.510370" name="First name" type="text" placeholder="{{ 'placeholder First name' | i18n }}"
+                class="form-control" />
             </div>
             <div class="mb-3">
               <label for="entry.529659111" class="form-label">{{ 'Last name' | i18n }}</label>
-              <input id="entry.529659111" name="entry.529659111" type="text"
+              <input id="entry.529659111" name="Last name" type="text"
                 placeholder="{{ 'placeholder Last name' | i18n }}" class="form-control" />
             </div>
             <div class="mb-3">
               <label for="entry.1335138370" class="form-label">{{ 'Email address' | i18n }}</label>
-              <input id="entry.1335138370" name="entry.1335138370" type="email"
+              <input id="entry.1335138370" name="Email address" type="email"
                 placeholder="{{ 'placeholder Email' | i18n }}" class="form-control" aria-describedby="emailHelp" />
               <div id="emailHelp" class="form-text">{{ 'never share your email' | i18n }}</div>
             </div>
             <div class="mb-3">
-              <label for="entry.1325652914" class="form-label">{{ 'Telephone number' | i18n }}</label>
+              <label for="fc-phone" class="form-label">{{ 'Telephone number' | i18n }}</label>
               <div class="input-group mb-3">
-                <input id="entry.1325652914" name="entry.1325652914" type="text" class="form-control" />
+                <input id="fc-phone" name="Telephone number" type="text" class="form-control" />
               </div>
             </div>
             <div class="mb-3">
               <label for="entry.1900898239" class="form-label">{{ 'Company name' | i18n }}</label>
-              <input id="entry.1900898239" name="entry.1900898239" type="text"
-                placeholder="{{ 'John Doe Corp' | i18n }}" class="form-control" />
+              <input id="entry.1900898239" name="Company name" type="text" placeholder="{{ 'John Doe Corp' | i18n }}"
+                class="form-control" />
             </div>
             <div class="mb-3">
               <label for="entry.1112552584" class="form-label">{{ 'Business ID' | i18n }}</label>
-              <input id="entry.1112552584" name="entry.1112552584" type="text" placeholder="{{ 'XXXXXXX-X' | i18n }}"
+              <input id="entry.1112552584" name="Business ID" type="text" placeholder="{{ 'XXXXXXX-X' | i18n }}"
                 class="form-control" />
             </div>
             <div class="mb-3">
               <label for="entry.1457350359" class="form-label">{{ 'Case Description' | i18n }}</label>
-              <textarea id="entry.1457350359" name="entry.1457350359" class="form-control"
+              <textarea id="entry.1457350359" name="Case Description" class="form-control"
                 placeholder="{{ 'placeholder Case Description' | i18n }}" rows="3"></textarea>
             </div>
             <div class="mb-3">
               <label for="entry.282991526" class="form-label">{{ 'Your Schedule' | i18n }}</label>
-              <input id="entry.282991526" name="entry.282991526" type="text"
+              <input id="entry.282991526" name="Your Schedule" type="text"
                 placeholder="{{ 'placeholder Your Schedule' | i18n }}" class="form-control" />
             </div>
             <div class="mb-3">
               <label for="entry.1718516198" class="form-label">{{ 'How Long Do You Need The Talent' | i18n }}</label>
-              <input id="entry.1718516198" name="entry.1718516198" type="text"
+              <input id="entry.1718516198" name="How Long Do You Need The Talent" type="text"
                 placeholder="{{ 'placeholder How Long' | i18n }}" class="form-control" />
             </div>
             <div class="mb-3">
               <label for="entry.552707613" class="form-label">{{ 'Other Requirements' | i18n }}</label>
-              <input id="entry.552707613" name="entry.552707613" type="text"
+              <input id="entry.552707613" name="Other Requirements" type="text"
                 placeholder="{{ 'placeholder Other Requirements' | i18n }}" class="form-control" />
             </div>
           </fieldset>
         </form>
       </div>
       <div class="border-top p-3 d-flex justify-content-between">
-        <button id="form-submit" type="submit" form="form.customer" class="btn btn-primary">{{ 'Send' | i18n }}</button>
+        <button id="form-customer-submit" type="submit" form="form-customer" class="btn btn-primary">{{ 'Send' | i18n
+          }}</button>
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{ 'Close' | i18n }}</button>
       </div>
     </div>
   </div>
 </div>
-<script>
-  function disableButton(toggle = true, success) {
-    const btn = document.querySelector('#form-submit');
-    btn.disabled = toggle;
-    let className = 'btn btn-secondary';
-    switch (typeof success) {
-      case 'boolean':
-        className = success ? 'btn btn-success' : 'btn btn-danger'
-        break;
-
-      default:
-        break;
-    }
-    btn.className = className;
-  }
-  function disableForm(disable = true, reset) {
-    if (reset) {
-      $('#form\\.customer').trigger('reset');
-    }
-    disableButton(disable, reset);
-    document.querySelector('#form\\.customer fieldset').disabled = disable;
-  }
-  function onSubmit() {
-    disableForm(true);
-    $.ajax({
-      url: "https://docs.google.com/forms/u/0/d/e/1FAIpQLSeN7N-Z75bi-5LNxHAG1lgB_ncWgFoQXX4M_yv6NHsGoGNUEw/formResponse?embedded=true",
-
-      data: [510370, 529659111, 1335138370, 1325652914, 1900898239, 1112552584, 1457350359, 282991526, 1718516198, 552707613].reduce((acc, f) => {
-        acc['entry.' + f] = $('#entry\\.' + f).val()
-        return acc
-      }, {}),
-      type: "POST",
-      dataType: "xml",
-      success: function (d) {
-        disableForm(false, true);
-      },
-      error: function (jqXHR, textStatus, errorThrown) {
-        console.log({ textStatus, errorThrown });
-        disableForm(false, false);
-      }
-    });
-    return false;
-  }
-</script>

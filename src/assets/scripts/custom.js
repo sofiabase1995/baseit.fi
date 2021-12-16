@@ -1,3 +1,26 @@
+function disableButton(id, toggle = true, success) {
+  const btn = document.getElementById(id + '-submit');
+  btn.disabled = toggle;
+  let className = 'btn btn-secondary';
+  switch (typeof success) {
+    case 'boolean':
+      className = success ? 'btn btn-success' : 'btn btn-danger'
+      break;
+
+    default:
+      break;
+  }
+  btn.className = className;
+}
+
+function disableForm(id, disable = true, reset) {
+  if (reset) {
+    $('#' + id).trigger('reset');
+  }
+  disableButton(id, disable, reset);
+  document.querySelector('#' + id + ' fieldset').disabled = disable;
+}
+
 (function () {
   $(window).on("scroll", function () {
     var scroll = $(window).scrollTop();
@@ -31,7 +54,7 @@
   // $("input#fc-phone").intlTelInput({
   //   utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/8.4.6/js/utils.js"
   // });
-  const phoneInputs = document.querySelectorAll("#entry\\.1325652914, #entry\\.1653417635");
+  const phoneInputs = document.querySelectorAll("#fc-phone");
   if (phoneInputs.length > 0) {
     window.intlTelInputGlobals.loadUtils("https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/utils.min.js");
     Array.prototype.forEach.call(
@@ -50,4 +73,39 @@
       }
     );
   }
+
+  const url = 'https://script.google.com/macros/s/AKfycbyhOuS-UXj8b_5chVZ-H0JHtTkZWuPTOpZES4t8kr5dDqqvRCBOrzMOZ9Xz19WySoWM/exec';
+  const formQuestionsId = 'form-questions';
+  const formQuestions = document.forms[formQuestionsId];
+  if (formQuestions)
+    formQuestions.addEventListener('submit', e => {
+      e.preventDefault();
+      const body = new FormData(formQuestions);
+      disableForm(formQuestionsId, true);
+      fetch(url, { method: 'POST', body })
+        .then(response => {
+          disableForm(formQuestionsId, false, true);
+        })
+        .catch(error => {
+          disableForm(formQuestionsId, false, false);
+          console.error('Error!', error.message)
+        });
+    });
+
+  const formCustomerId = 'form-customer';
+  const formCustomer = document.forms[formCustomerId];
+  if (formCustomer)
+    formCustomer.addEventListener('submit', e => {
+      e.preventDefault();
+      const body = new FormData(formCustomer);
+      disableForm(formCustomerId, true);
+      fetch(url, { method: 'POST', body })
+        .then(response => {
+          disableForm(formCustomerId, false, true);
+        })
+        .catch(error => {
+          disableForm(formCustomerId, false, false);
+          console.error('Error!', error.message)
+        });
+    });
 })();
