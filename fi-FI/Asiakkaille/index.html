@@ -7,8 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BASEiT Henkilöstöpalvelut - Laadukkaita palveluita tekijöille - Asiakkaille</title>
 
-  <link rel="shortcut icon" href="/assets/favicons/favicon.png?v1.0.10">
-  <link rel="stylesheet" href="/assets/styles/main.css?v1.0.10">
+  <link rel="shortcut icon" href="/assets/favicons/favicon.png?v1.0.11">
+  <link rel="stylesheet" href="/assets/styles/main.css?v1.0.11">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/css/intlTelInput.css"
     integrity="sha512-gxWow8Mo6q6pLa1XH/CcH8JyiSDEtiwJV78E+D+QP0EVasFs8wKXq16G8CLD4CJ2SnonHr4Lm/yY2fSI2+cbmw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -152,114 +152,71 @@
             <br />Please tell us a little about your needs and situation.
           </p>
         </div>
-        <form id="form.customer" onsubmit="return onSubmit();">
+        <form id="form-customer" name="form-customer">
           <fieldset>
+            <input name="sheet" type="hidden" value="Clients" />
             <div class="mb-3">
               <label for="entry.510370" class="form-label">Etunimi</label>
-              <input id="entry.510370" name="entry.510370" type="text"
-                placeholder="John" class="form-control" />
+              <input id="entry.510370" name="First name" type="text" placeholder="John"
+                class="form-control" />
             </div>
             <div class="mb-3">
               <label for="entry.529659111" class="form-label">Sukunimi</label>
-              <input id="entry.529659111" name="entry.529659111" type="text"
+              <input id="entry.529659111" name="Last name" type="text"
                 placeholder="Doe" class="form-control" />
             </div>
             <div class="mb-3">
               <label for="entry.1335138370" class="form-label">Sähköposti</label>
-              <input id="entry.1335138370" name="entry.1335138370" type="email"
+              <input id="entry.1335138370" name="Email address" type="email"
                 placeholder="myemail@domain.name" class="form-control" aria-describedby="emailHelp" />
               <div id="emailHelp" class="form-text">Emme koskaan jaa sähköpostiosoitettasi kolmannen osapuolen kanssa.</div>
             </div>
             <div class="mb-3">
-              <label for="entry.1325652914" class="form-label">Puhelinnumero</label>
+              <label for="fc-phone" class="form-label">Puhelinnumero</label>
               <div class="input-group mb-3">
-                <input id="entry.1325652914" name="entry.1325652914" type="text" class="form-control" />
+                <input id="fc-phone" name="Telephone number" type="text" class="form-control" />
               </div>
             </div>
             <div class="mb-3">
               <label for="entry.1900898239" class="form-label">Yrityksen nimi</label>
-              <input id="entry.1900898239" name="entry.1900898239" type="text"
-                placeholder="John Doe Corp" class="form-control" />
+              <input id="entry.1900898239" name="Company name" type="text" placeholder="John Doe Corp"
+                class="form-control" />
             </div>
             <div class="mb-3">
               <label for="entry.1112552584" class="form-label">Y-tunnus</label>
-              <input id="entry.1112552584" name="entry.1112552584" type="text" placeholder="XXXXXXX-X"
+              <input id="entry.1112552584" name="Business ID" type="text" placeholder="XXXXXXX-X"
                 class="form-control" />
             </div>
             <div class="mb-3">
               <label for="entry.1457350359" class="form-label">Kuvaus tarpeestasi</label>
-              <textarea id="entry.1457350359" name="entry.1457350359" class="form-control"
+              <textarea id="entry.1457350359" name="Case Description" class="form-control"
                 placeholder="Tavoitteet, vastuut, teknologiat..." rows="3"></textarea>
             </div>
             <div class="mb-3">
               <label for="entry.282991526" class="form-label">Aikataulusi</label>
-              <input id="entry.282991526" name="entry.282991526" type="text"
+              <input id="entry.282991526" name="Your Schedule" type="text"
                 placeholder="Heti, parin viikon päästä..." class="form-control" />
             </div>
             <div class="mb-3">
               <label for="entry.1718516198" class="form-label">Tarpeen kesto</label>
-              <input id="entry.1718516198" name="entry.1718516198" type="text"
+              <input id="entry.1718516198" name="How Long Do You Need The Talent" type="text"
                 placeholder="Tarvitsen tekijää kolmeksi kuukaudeksi..." class="form-control" />
             </div>
             <div class="mb-3">
               <label for="entry.552707613" class="form-label">Muut vaatimukset</label>
-              <input id="entry.552707613" name="entry.552707613" type="text"
+              <input id="entry.552707613" name="Other Requirements" type="text"
                 placeholder="On-site, kielivaatimukset..." class="form-control" />
             </div>
           </fieldset>
         </form>
       </div>
       <div class="border-top p-3 d-flex justify-content-between">
-        <button id="form-submit" type="submit" form="form.customer" class="btn btn-primary">Lähetä</button>
+        <button id="form-customer-submit" type="submit" form="form-customer" class="btn btn-primary">Lähetä</button>
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sulje</button>
       </div>
     </div>
   </div>
 </div>
-<script>
-  function disableButton(toggle = true, success) {
-    const btn = document.querySelector('#form-submit');
-    btn.disabled = toggle;
-    let className = 'btn btn-secondary';
-    switch (typeof success) {
-      case 'boolean':
-        className = success ? 'btn btn-success' : 'btn btn-danger'
-        break;
-
-      default:
-        break;
-    }
-    btn.className = className;
-  }
-  function disableForm(disable = true, reset) {
-    if (reset) {
-      $('#form\\.customer').trigger('reset');
-    }
-    disableButton(disable, reset);
-    document.querySelector('#form\\.customer fieldset').disabled = disable;
-  }
-  function onSubmit() {
-    disableForm(true);
-    $.ajax({
-      url: "https://docs.google.com/forms/u/0/d/e/1FAIpQLSeN7N-Z75bi-5LNxHAG1lgB_ncWgFoQXX4M_yv6NHsGoGNUEw/formResponse?embedded=true",
-
-      data: [510370, 529659111, 1335138370, 1325652914, 1900898239, 1112552584, 1457350359, 282991526, 1718516198, 552707613].reduce((acc, f) => {
-        acc['entry.' + f] = $('#entry\\.' + f).val()
-        return acc
-      }, {}),
-      type: "POST",
-      dataType: "xml",
-      success: function (d) {
-        disableForm(false, true);
-      },
-      error: function (jqXHR, textStatus, errorThrown) {
-        console.log({ textStatus, errorThrown });
-        disableForm(false, false);
-      }
-    });
-    return false;
-  }
-</script>
   <section class="section_all bg_footer">
   <div class="container">
     <div class="row">
@@ -376,8 +333,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/intlTelInput.min.js"
   integrity="sha512-QMUqEPmhXq1f3DnAVdXvu40C8nbTgxvBGvNruP6RFacy3zWKbNTmx7rdQVVM2gkd2auCWhlPYtcW2tHwzso4SA=="
   crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script type="text/javascript" src="/assets/scripts/talentadore.js?v1.0.10"></script>
-<script type="text/javascript" src="/assets/scripts/custom.js?v1.0.10"></script>
+<script type="text/javascript" src="/assets/scripts/talentadore.js?v1.0.11"></script>
+<script type="text/javascript" src="/assets/scripts/custom.js?v1.0.11"></script>
 </body>
 
 </html>
