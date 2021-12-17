@@ -74,7 +74,7 @@ function disableForm(id, disable = true, reset) {
     );
   }
 
-  const url = 'https://script.google.com/macros/s/AKfycbwslIccm4KXmZIsbOOOzF6XGaNdhcoVZNY8AW6byQ8Gze48BdQ3tDAp5xIVVtYCzsJ0/exec';
+  const url = 'https://script.google.com/macros/s/AKfycby78WXyI0fHOjhYTkIIm7FKOsecEW1bRUg-nDRc-UdT2XOEtt3m1aUsqBQJLw9ea_Ji/exec';
   const formQuestionsId = 'form-questions';
   const formQuestions = document.forms[formQuestionsId];
   if (formQuestions)
