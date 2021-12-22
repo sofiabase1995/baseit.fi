@@ -1,6 +1,6 @@
 {
   "name": "baseit.fi",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "BASEiT",
   "main": "index.js",
   "scripts": {
