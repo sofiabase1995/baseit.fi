@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pashuka/baseit.fi.git"
+    "url": "git+https://github.com/BASEiT-fi/baseit.fi.git"
   },
   "keywords": [],
   "author": "Pavel Goroshko",
@@ -23,9 +23,9 @@
     "last 4 versions"
   ],
   "bugs": {
-    "url": "https://github.com/pashuka/baseit.fi/issues"
+    "url": "https://github.com/BASEiT-fi/baseit.fi/issues"
   },
-  "homepage": "https://github.com/pashuka/baseit.fi#readme",
+  "homepage": "https://github.com/BASEiT-fi/baseit.fi#readme",
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1",
     "@11ty/eleventy-navigation": "^0.3.2",
