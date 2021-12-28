@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css?family=Spartan:400,500,700|Roboto:400,500");
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons+Round");
 
 .btn-primary,
@@ -120,16 +119,13 @@ a:hover {
   background-position: center center;
 }
 .cover-join {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5)),
-    url(../images/puzzle-ga517bba4e_1280.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5)), url(../images/puzzle-ga517bba4e_1280.jpg);
 }
 .cover-services {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5)),
-    url(../images/finance-g8d373bb75_1280.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5)), url(../images/finance-g8d373bb75_1280.jpg);
 }
 .cover-home {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5)),
-    url(../images/bg_business_counter.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5)), url(../images/bg_business_counter.jpg);
 
   .typedjs-slogan {
     color: $primary;
@@ -181,7 +177,6 @@ a:hover {
   z-index: 10;
 }
 
-
 .mh-services {
   min-height: 14rem;
 }
@@ -225,11 +220,7 @@ a:hover {
 
 .bg_custom_gradiant {
   background: #ff4b1f; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to top,
-    #ff4b1f,
-    #ff9068
-  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to top, #ff4b1f, #ff9068); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
     to top,
     #ff4b1f,
@@ -385,15 +376,13 @@ a:hover {
 ====================*/
 
 .bg_cta_business_img {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)),
-    url(../images/bg_business_cta.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)), url(../images/bg_business_cta.jpg);
   background-size: cover;
   background-attachment: fixed;
 }
 
 .bg_buss_call_cta {
-  background-image: linear-gradient(#00394ecc, #00394e80),
-    url(../images/bg_buss_call.jpg);
+  background-image: linear-gradient(#00394ecc, #00394e80), url(../images/bg_buss_call.jpg);
   background-size: cover;
   background-attachment: fixed;
 }
@@ -450,7 +439,6 @@ textarea.form-control {
 .contact_detail p {
   overflow: hidden;
 }
-
 
 /*==================
     19.FOOTER
