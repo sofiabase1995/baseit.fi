@@ -1,5 +1,9 @@
 let talentadoreContainer = null;
 const tags = ["assignment", "open+position", "direct+recruiting"];
+const filterBy = {
+  city: true,
+  country: false
+}
 let feedJobs = [];
 
 // on Load
@@ -82,7 +86,7 @@ const onChange = (e) => {
 
 const onChangeCountry = (e) => {
   if (!e || !e.target || typeof e.target.value !== "string") return;
-  const checked = getChecked("filter-countries");
+  const checked = getChecked("filterBy-country");
   renderEntries(
     feedJobs.filter((j) => !j.country || checked.indexOf(j.country) !== -1)
   );
@@ -135,11 +139,11 @@ const createJobElement = ({
   return column;
 };
 
-const createFilterByCountryElement = (country = "[ Not set ]") => {
+const createFormCheckBox = (id = "not-set", name = "not-set", value = "Not set", title) => {
   const input = document.createElement("input");
-  input.id = `country-${country}`;
-  input.name = "filter-countries";
-  input.value = country;
+  input.id = name + "-" + id;
+  input.name = name;
+  input.value = value;
   input.checked = true;
   input.type = "checkbox";
   input.className = "form-check-input";
@@ -147,64 +151,84 @@ const createFilterByCountryElement = (country = "[ Not set ]") => {
   input.addEventListener("propertychange", onChangeCountry);
 
   const label = document.createElement("label");
-  label.htmlFor = `country-${country}`;
+  label.htmlFor = input.id;
   label.className = "form-check-label text-capitalize";
-  label.innerText = country;
+  label.innerText = title || value;
 
   const el = document.createElement("div");
   el.className = "form-check form-check-inline";
-  // el.innerHTML = `
-  //   <input class="form-check-input" type="checkbox" name="filter-countries" id="country-${country}" value="${country}" checked>
-  //   <label class="form-check-label text-capitalize" for="country-${country}">${country}</label>
-  // `;
+
   el.appendChild(input);
   el.appendChild(label);
   return el;
 };
 
-const renderFilters = (jobs = []) => {
+const renderFilters = (jobs = [], filterBy = {
+  country: false,
+  city: true
+}) => {
   const container = document.getElementById("talentadore-filters");
   container.innerHTML = ``;
-  let result = [];
-
   // By country
-  const countries = jobs
-    // map with empty
-    .map(
-      ({ country }) =>
-        // typeof country !== "string" || !country ? "- Not Set -" : country
-        country
-    )
-    .sort()
-    // unique
-    .filter((value, index, self) => value && self.indexOf(value) === index);
-
-  result = filterByCountry(jobs);
-
-  const countriesContainer = document.createElement("div");
-  for (i in countries) {
-    countriesContainer.appendChild(createFilterByCountryElement(countries[i]));
+  if (filterBy.country) {
+    const countries = jobs
+      // map with empty
+      .map(
+        ({ country }) =>
+          // typeof country !== "string" || !country ? "- Not Set -" : country
+          country
+      )
+      .sort()
+      // unique
+      .filter((value, index, self) => value && self.indexOf(value) === index);
+    if (countries.length <= 1) {
+      return;
+    }
+    // jobs = filterByCountry(jobs);
+    const countriesContainer = document.createElement("div");
+    for (i in countries) {
+      countriesContainer.appendChild(createFormCheckBox(i, 'filterBy-country', countries[i]));
+    }
+    container.appendChild(countriesContainer);
   }
-  container.appendChild(countriesContainer);
+  // By city
+  if (filterBy.city) {
+    const cities = jobs
+      // map with empty
+      .map(
+        ({ city }) =>
+          // typeof country !== "string" || !country ? "- Not Set -" : country
+          city
+      )
+      .sort()
+      // unique
+      .filter((value, index, self) => value && self.indexOf(value) === index);
+    if (cities.length <= 1) {
+      return;
+    }
+    // jobs = country ? jobs.filter((entry) => country === entry.country) : jobs;
+    const citiesContainer = document.createElement("div");
+    for (i in cities) {
+      citiesContainer.appendChild(createFormCheckBox(i, 'filterBy-city', cities[i]));
+    }
+    container.appendChild(citiesContainer);
+  }
 
-  // By languages
-
-  return result;
+  return jobs;
 };
 
 const renderEntries = (jobs = []) => {
-  const container = document.getElementById("talentadore");
   const message = document.getElementById("talentadore-message");
   if (!Array.isArray(jobs)) {
     return;
   }
-  container.innerHTML = ``;
+  talentadoreContainer.innerHTML = ``;
 
   // Total
   const total = document.createElement("div");
   total.className = "py-3";
   total.innerHTML = `<span class="float-end badge rounded-pill bg-success fs-6">Total: ${jobs.length}</span>`;
-  container.appendChild(total);
+  talentadoreContainer.appendChild(total);
 
   if (jobs.length === 0) {
     message.className = "row justify-content-center collapse show";
@@ -212,11 +236,12 @@ const renderEntries = (jobs = []) => {
     message.className = "row justify-content-center collapse";
     for (i in jobs) {
       const job = jobs[i];
-      container.appendChild(createJobElement(job));
+      talentadoreContainer.appendChild(createJobElement(job));
     }
   }
 };
 
 const render = () => {
-  renderEntries(renderFilters(feedJobs));
+  renderFilters(feedJobs, filterBy);
+  renderEntries(feedJobs);
 };
