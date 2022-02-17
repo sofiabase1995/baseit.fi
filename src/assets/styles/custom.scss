@@ -148,12 +148,23 @@ a:hover {
   min-height: 65vh;
 }
 
+.display-7 {
+  font-size: calc(1.25rem + 1.25vw);
+  line-height: 1.2;
+}
+@media (min-width: 1200px) {
+  .display-7 {
+    font-size: 2.125rem;
+  }
+}
+
 .display-1,
 .display-2,
 .display-3,
 .display-4,
 .display-5,
-.display-6 {
+.display-6,
+.display-7 {
   text-transform: uppercase;
   font-weight: 700;
 }
@@ -619,4 +630,28 @@ textarea.form-control {
   -webkit-line-clamp: 10;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+@media (max-width: 830px) {
+  .lead {
+    font-size: 1rem;
+  }
+  // .fs-1 {
+  //   font-size: calc(1.325rem + 1.2vw) !important;
+  // }
+  // .fs-2 {
+  //   font-size: calc(1.275rem + 0.6vw) !important;
+  // }
+  // .fs-3 {
+  //   font-size: calc(1.2rem + 0.3vw) !important;
+  // }
+  // .fs-4 {
+  //   font-size: calc(1.125rem + 0.15vw) !important;
+  // }
+  // .fs-5 {
+  //   font-size: 0.875rem !important;
+  // }
+  // .fs-6 {
+  //   font-size: 0.875rem !important;
+  // }
 }
